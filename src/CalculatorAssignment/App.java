@@ -17,9 +17,9 @@ public class App {
             if (playerAnswer.equals("exit")) {
                 break;
             }
-            System.out.printf("숫자를 입력하세요 num1: ");
+            System.out.print("숫자를 입력하세요 num1: ");
             int num1 = sc.nextInt();
-            System.out.printf("숫자를 입력하세요 num2: ");
+            System.out.print("숫자를 입력하세요 num2: ");
             int num2 = sc.nextInt();
             System.out.println("연산자를 입력하세요.");
             char operator = sc.next().charAt(0);
