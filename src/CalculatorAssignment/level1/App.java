@@ -1,4 +1,4 @@
-package CalculatorAssignment;
+package CalculatorAssignment.level1;
 
 import java.util.Scanner;
 
@@ -33,9 +33,12 @@ public class App {
 
     }
 
-    public static int calculate(char operator, int num1, int num2) {
-        int result = 0;
 
+
+
+    public static int calculate(char operator, int num1, int num2) {
+
+        int result = 0;
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -47,11 +50,13 @@ public class App {
                 result = num1 * num2;
                 break;
             case '/':
+
                 try {
                     if (num2 == 0) {
                         throw new ArithmeticException("0으로 나누기 불가"); //중요 구문 외우기
                     }
-                    result = num1 / num2;
+                     result =  num1 / num2;
+
                     System.out.println(result);
                 } catch (ArithmeticException e) {
                     System.out.println("오류 " + e.getMessage());
@@ -64,7 +69,7 @@ public class App {
                             throw new ArithmeticException("오류 0으로 나누기 불가");
 
                         }
-//                        result = double num1 % num2;
+                        result =  num1 % num2;
                         break;
 
                    } catch (ArithmeticException e){
