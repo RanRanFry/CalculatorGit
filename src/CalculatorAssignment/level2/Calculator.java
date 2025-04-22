@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Calculator {
     //1.속성
     private ArrayList<Integer> list = new ArrayList<>();
-    private String name = "연명부";
+    private String OwnersName = "문정호";
 
     //2.생성자
 
@@ -24,11 +24,11 @@ public class Calculator {
     }
 
 
-    public String  getName(){return name;}
+    public String  getOwner(){return OwnersName;}
 
     //세터
-    public void  setBrand(String name){
-        this.name = name;
+    public void  setOwner(String name){
+        this.OwnersName = name;
     }
 
 
@@ -38,25 +38,42 @@ public class Calculator {
         System.out.println("정수를 입력하세요.");
 
         boolean flag = true;
-        int num =0;
-        while(flag){
-            try{
+        int num = 0;
+        while (flag) {
+            try {
                 num = sc.nextInt();
 
-            } catch (InputMismatchException i){
+            } catch (InputMismatchException i) {
                 System.out.println("정수만 넣어주세요." + i.getMessage());
 
-            }flag = false;
+            }
+            flag = false;
 
-        }return num;
+        }
+        return num;
+    }
 
 
+    //
+    public boolean checkString(Scanner sc){
+        System.out.println("계산을 하시겠습니까? q를 입력해주세요 \n 그만하시려면 'exit'을 입력해주세요");
 
+        String playerAnswer = sc.next();
+
+        boolean flag = true;
+        if (playerAnswer.equals("exit"))
+         {
+             System.out.println("계산을 종료합니다.");
+             flag = false;
+             return flag;
+         } return flag;
+
+    }
 
     //연산자 입력받기
-    public String getOperator(){
+    public char getOperator(Scanner sc) {
 
-         flag = true;
+         boolean flag = true;
          char operator ='a'; //반복문 조건
         while (flag) {
             System.out.println("연산자를 입력하세요.(+ - * / %)");
@@ -129,6 +146,6 @@ public class Calculator {
     public void removeResult(ArrayList list) {
         list.remove(0);
     }
-    }
+
 }
 
