@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Calculator {
     //1.속성
     private ArrayList<Integer> list = new ArrayList<>();
-    private String brandName = "연명부";
+    private String OwnersName = "문정호";
 
     //2.생성자
 
@@ -24,11 +24,11 @@ public class Calculator {
     }
 
 
-    public String  getBrand(){return brandName;}
+    public String  getOwner(){return OwnersName;}
 
     //세터
-    public void  setBrand(String name){
-        this.brandName = name;
+    public void  setOwner(String name){
+        this.OwnersName = name;
     }
 
 

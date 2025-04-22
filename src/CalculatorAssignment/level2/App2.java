@@ -1,5 +1,7 @@
 package CalculatorAssignment.level2;
 
+import CalculatorAssignment.level3.Operation;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,10 +16,13 @@ public class App2 {
         boolean flag = true;
         while (flag) {
             if(!calc.checkString(sc)){ break;}
-            System.out.println("버튼을 누르세요. 메뉴 버튼: 1. 연산 , 2.계산결과 목록 , 3. 계산결과 제거");
+            System.out.println("메뉴 버튼: 1. 연산 , 2.계산결과 목록 , 3. 계산결과 제거, 4. 작성자명, 5. 작성자명 변경");
+            sc.nextLine();
+
             int menuNum = sc.nextInt();
 
-            switch (menuNum) { //메뉴열기
+
+            switch (menuNum) {
                 case 1: //연산 페이지
                     int num1 = calc.getIntNumber(sc);
                     int num2 = calc.getIntNumber(sc);
@@ -29,9 +34,8 @@ public class App2 {
                     calc.addResult(result);
                     break;
 
-                case 2:
-                    System.out.println(calc.getList());  //현재 리스트 값 출력
-                    System.out.println("\n");
+                case 2:                 //현재 리스트 값 출력
+                    System.out.println(calc.getList());
                     break;
 
                 case 3:
@@ -45,38 +49,25 @@ public class App2 {
                     }catch(IndexOutOfBoundsException e){
 
                         System.out.println("리스트에 원소가 없습니다. 원소를 추가해주세요."+e.getMessage());
-                        System.out.println("\n");
-
-
                     }
 
+                    break;
+
+                case 4:
+                    System.out.println("현재 작성자 명: "+calc.getOwner());
+                    break;
+                case 5:
+                    System.out.println("변경할 작성자 명을 입력해주세요.");
+                    String name = sc.next();
+                    sc.nextLine();
+                    calc.setOwner(name);
+                    System.out.println(calc.getOwner());
                     break;
 
                 default:
                     continue;
 
             }
-        }
-
-
-        //리스트 정보 확인
-          //간접 접근 게터 사용
-        //System.out.println(calc.brandName);
-        //calc.brandName = "TomBrowny"
-        System.out.println(calc.getBrand());
-        calc.setBrand("Browny");
-        System.out.println(calc.getBrand());
-
-        System.out.println("현재 값 출력");
-        for (int value : list) {
-            System.out.println(value);
-        }
-
-
-
-        System.out.println("삭제 후  출력");
-        for (int value : list) {
-            System.out.println(value);
         }
 
     }
