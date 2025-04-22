@@ -17,7 +17,7 @@ public class App2 {
             System.out.println("버튼을 누르세요. 메뉴 버튼: 1. 연산 , 2.계산결과 목록 , 3. 계산결과 제거");
             int menuNum = sc.nextInt();
 
-            switch (menuNum) {
+            switch (menuNum) { //메뉴열기
                 case 1: //연산 페이지
                     int num1 = calc.getIntNumber(sc);
                     int num2 = calc.getIntNumber(sc);
